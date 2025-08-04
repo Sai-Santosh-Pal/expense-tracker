@@ -22,14 +22,17 @@ const BalanceBox = styled.div`
 `;
 
 const AddTransaction = styled.button`
-    background: white;
-    color: black;
+    background-color: #00b894;
+    color: #ffffff;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 10px;
     text-align: center;
     cursor: pointer;
     font-weight: bold;
     font-size: 15px;
+    font-family: Geist;
+    border: none;
+
 `;
 
 const AddTransactionContainer = styled.div`
@@ -45,11 +48,10 @@ const AddTransactionContainer = styled.div`
         border: none;
         outline: none;
         padding: 10px 12px;
-    font-family: Geist;
-
+        font-family: Geist;
         border-radius: 10px;
         color: white;
-        background-color:rgb(25, 25, 25);
+        background-color:#191919;
         margin-bottom: 5px;
   
     }
@@ -62,7 +64,7 @@ const RadioBox = styled.div`
     align-items: center;
     & input {
         width: unset;
-        margin: 0 10px;
+        margin: 10px;
     }
 `;
 
