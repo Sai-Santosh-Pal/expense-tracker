@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.span`
-  color: white;
+  color: #ffffff;
   font-size: 35px;
   font-weight: bold;
 `;

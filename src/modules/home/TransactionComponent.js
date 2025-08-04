@@ -15,13 +15,13 @@ const Container = styled.div`
   & input {
     padding: 10px 12px;
     border-radius: 12px;
-    background: #9a9a9a;
-    border: solid #9a9a9a;
+    background: #fff;
+    border: solid black;
     outline: none;
   }
 `;
-const Cell = styled.div`
-  background-color:#2d2d2d;
+const Cell = styled.div` 
+  background-color: #2d2d2d;
   color: white;
   display: flex;
   flex-direction: row;

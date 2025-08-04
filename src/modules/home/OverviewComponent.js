@@ -35,14 +35,22 @@ const AddTransaction = styled.button`
 const AddTransactionContainer = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px solid #e6e8e9
+    background-color: #2d2d2d;
+    border-radius: 10px;
     width: 100%;
     padding: 15px 20px;
     margin: 20px;
+    outline: none;
     & input{
+        border: none;
         outline: none;
         padding: 10px 12px;
+    font-family: Geist;
+
         border-radius: 10px;
+        color: white;
+        background-color:rgb(25, 25, 25);
+        margin-bottom: 5px;
   
     }
 `;
@@ -117,15 +125,18 @@ const ExpenseBox = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    border: 1px solid #e6e8e9;
-    color: white;
+    background-color: #3a3a3a;
+    color: #b4b4b4;
+    border: 1px solid #3a3a3a;
     padding: 15px 20px;
     width: 135px;
     font-size: 14px;
+    font-family: Geist;
+    box-shadow: -3px 3px 10px rgba(143, 140, 136);
     & span{
         font-weight: bold;
         font-size: 20px;
-        color: ${(props) => props.isIncome ? "green":"red"}
+        color: ${(props) => props.isIncome ? "#36FF00":"red"}
     }
 `;
 
