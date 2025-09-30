@@ -1,7 +1,7 @@
 # Expense Tracker
 
-- A simple easy to expense tracker
-- You can expenses as well as income
+- A simple and easy-to-use expense tracker
+- You can add, expenses as well as income
 - Dark mode UI
 
 Visit - https://expense-tracker-psi-nine-91.vercel.app/
