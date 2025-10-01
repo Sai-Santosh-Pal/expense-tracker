@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Container = styled.div`
-  background-color: black;
-  color:#ffffff;
+  background-color: #fff;
+  color: #000;
   display: flex;
   flex-direction: column;
   padding: 10px 22px;
@@ -12,34 +13,46 @@ const Container = styled.div`
   gap: 10px;
   font-weight: bold;
   overflow-y: auto !important;
+  letter-spacing: -0.5px;
   & input {
     padding: 10px 12px;
     border-radius: 12px;
     background: #fff;
-    border: solid black;
+    border: 1px solid #bbb;
     outline: none;
+    color: #000;
+    letter-spacing: -0.5px;
   }
 `;
 const Cell = styled.div` 
-  background-color: #2d2d2d;
-  color: white;
+  background-color: #fff;
+  color: #000;
   display: flex;
   flex-direction: row;
   padding: 10px 15px;
   font-size: 14px;
   border-radius: 5px;
-  border: 1px solid #000000;
+  border: 1px solid #bbb;
   align-items: center;
   font-weight: normal;
   justify-content: space-between;
-  border-right: 4px solid ${(props) => (props.isExpense ? "red" : "green")};
+  border-right: 4px solid ${(props) => (props.isExpense ? "#d32f2f" : "#009900")};
+  letter-spacing: -0.5px;
 `;
 const TransactionCell = (props) => {
   return (
-    <Cell isExpense={props.payload?.type === "EXPENSE"}>
-      <span>{props.payload?.desc}</span>
-      <span>${props.payload?.amount}</span>
-    </Cell>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      style={{ width: '100%' }}
+    >
+      <Cell isExpense={props.payload?.type === "EXPENSE"}>
+        <span>{props.payload?.desc}</span>
+        <span>${props.payload?.amount}</span>
+      </Cell>
+    </motion.div>
   );
 };
 const TransactionsComponent = (props) => {
@@ -72,9 +85,11 @@ const TransactionsComponent = (props) => {
           filterData(e.target.value);
         }}
       />
-      {filteredTransaction?.map((payload) => (
-        <TransactionCell payload={payload} />
-      ))}
+      <AnimatePresence>
+        {filteredTransaction?.map((payload) => (
+          <TransactionCell key={payload.id} payload={payload} />
+        ))}
+      </AnimatePresence>
     </Container>
   );
 };
